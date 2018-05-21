@@ -8,7 +8,13 @@ describe Account do
 
   describe '#deposit' do
     it "should add the deposit to your account balance " do
-      expect{subject.deposit(100)}.to change{subject.balance}.by 100
+      expect{ subject.deposit(100) }.to change{ subject.balance }.by 100
+    end
+  end
+
+  describe '#withdrawal' do
+    it "should subtract amount from your account balance " do
+      expect{ subject.withdrawal(50) }.to change{ subject.balance }.by(-50) 
     end
   end
 
