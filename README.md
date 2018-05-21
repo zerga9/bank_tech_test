@@ -27,13 +27,17 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
-#### How it works;
+#### How it works
 
-clone this reposition, run bundle install in your terminal and you can interact with the code via IRB
-In IRB require './lib/account.rb'
-type in account = Account.new and then you can make transactions with account.transaction(amount, type, date)
-If you want to print the transactions just type account.print in your IRB and you'll get a table with all your transactions, last one first.
+clone this reposition, run bundle install in your terminal and you can interact with the code via IRB.
+In IRB ```require './lib/account.rb'```
+type in ```account = Account.new``` and then you can make transactions with ```account.transaction(amount, type, date)```
+If you want to print the transactions just type ```account.print``` in your IRB and you'll get a table with all your transactions, last one first.
 
-#### Approach;
+#### Approach
 
-I first wrote the tests and then wrote the required code for the tests. Then I refactored until the code looked clean and went on writing another test until I had all the requirements working
+My approach for this test was TDD. I first wrote a test, tried to pass it and when it passed, I tried to refactor the code written. Then I went on writing another test and so on, until I had all the requirements working. This Red/Green/Refactor cycle helped me get a good structure for this challenge.
+
+#### Technical Specifications
+
+I used Ruby for this challenge, Rspec and Rubocop for testing and Simplecov for the testcoverage
