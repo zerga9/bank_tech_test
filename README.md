@@ -2,7 +2,7 @@
 
 IRB screenshot
 
-![image](https://user-images.githubusercontent.com/33194929/40305651-4452bdbc-5cf3-11e8-9e18-7ec1e7531d3e.png)
+![image](https://user-images.githubusercontent.com/33194929/40306204-b5f914aa-5cf5-11e8-9914-9e01034c7e33.png)
 
 
 Requirements

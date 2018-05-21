@@ -7,8 +7,7 @@ class Statement
   end
 
   def print_header
-    puts "date       || credit  || debit    || balance "
-    puts "---------------------------------------------"
+    puts "date || credit  || debit || balance "
   end
 
   def print_statement
