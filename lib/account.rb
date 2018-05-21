@@ -2,18 +2,19 @@ require_relative 'statement'
 
 class Account
   attr_reader :balance
+  attr_reader :transactions
 
-  def initialize(statement = Statement.new)
+  def initialize
     @balance = 0
-    @statement = statement
+    @transactions = []
   end
 
   def transaction(value, type, date)
     type == 'debit' ? @balance -= value : @balance += value
-    @statement.transactions << { date: date, type: type, value: value, balance: @balance }
+    transactions << { date: date, type: type, value: value, balance: @balance }
   end
 
   def print
-    @statement.print_statement
+    Statement.new(@transactions).print_statement
   end
 end
