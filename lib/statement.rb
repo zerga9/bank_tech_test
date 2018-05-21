@@ -1,5 +1,4 @@
 class Statement
-
   attr_reader :transactions
 
   def initialize
@@ -7,7 +6,7 @@ class Statement
   end
 
   def print_header
-    puts "date || credit  || debit || balance "
+    puts 'date || credit  || debit || balance '
   end
 
   def print_statement
@@ -20,5 +19,4 @@ class Statement
       end
     end
   end
-
 end
