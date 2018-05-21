@@ -18,9 +18,18 @@ describe Account do
     end
   end
 
-  it 'should give the date of a transaction' do
-    subject.transaction(20, 'credit', date)
-    expect(subject.print[0]).to include date: date
-  end
+    it 'should give the date of a transaction' do
+      subject.transaction(20, 'credit', date)
+      expect(subject.print[0]).to include date: date
+    end
+
+    it "should let the customer see all their transactions" do
+      subject.transaction(500,'credit',date)
+      subject.transaction(300,'debit', date)
+      expect(subject.print).to eq([{date: date, type: 'credit', value: 500, balance: 500},
+        {date: date, type: 'debit', value: 300, balance: 200}])
+    end
+
+
 
 end
