@@ -8,13 +8,9 @@ class Account
     @transactions = []
   end
 
-  def deposit(value, date)
-    @balance += value
-    @transactions << {date: date, value: value}
+  def transaction(value, type, date)
+    type == 'debit' ? @balance -= value : @balance += value
+    @transactions << {date: date, type: type, value: value}
   end
 
-  def withdrawal(value, date)
-    @balance -= value
-    @transactions << {date: date, value: value}
-  end
 end
