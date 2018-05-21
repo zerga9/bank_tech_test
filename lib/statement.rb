@@ -13,7 +13,7 @@ class Statement
 
   def print_statement
     print_header
-    @transactions.each do |transaction|
+    @transactions.reverse.each do |transaction|
       if transaction[:type] == 'credit'
         puts "#{transaction[:date]} || #{transaction[:value]} ||  ||  #{transaction[:balance]}"
       else

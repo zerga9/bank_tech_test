@@ -26,8 +26,14 @@ describe Account do
     it "should let the customer see all their transactions" do
       subject.transaction(500,'credit',date)
       subject.transaction(300,'debit', date)
-      expect(subject.print).to eq([{date: date, type: 'credit', value: 500, balance: 500},
-        {date: date, type: 'debit', value: 300, balance: 200}])
+      expect(subject.print).to include({date: date, type: 'debit', value: 300, balance: 200} )
+    end
+
+    it "should let the customer see all their transactions, last one first" do
+      subject.transaction(500,'credit',date)
+      subject.transaction(300,'debit', date)
+      expect(subject.print).to eq([{date: date, type: 'debit', value: 300, balance: 200},
+        {date: date, type: 'credit', value: 500, balance: 500}])
     end
 
 
