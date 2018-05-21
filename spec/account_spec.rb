@@ -25,4 +25,9 @@ describe Account do
     expect(subject.transactions[0]).to include date: date
   end
 
+  it 'should give date of withdrawal' do
+    subject.withdrawal(10, date)
+    expect(subject.transactions[0]).to include date: date
+  end
+
 end

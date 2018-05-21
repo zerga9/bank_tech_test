@@ -15,5 +15,6 @@ class Account
 
   def withdrawal(value, date)
     @balance -= value
+    @transactions << {date: date, value: value}
   end
 end
