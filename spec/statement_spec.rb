@@ -1,5 +1,4 @@
 require 'statement'
-require 'account'
 
 describe Statement do
   it 'should print out all the transactions, last one first' do
