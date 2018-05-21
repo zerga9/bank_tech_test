@@ -20,7 +20,7 @@ describe Account do
 
   it 'should give the date of a transaction' do
     subject.transaction(20, 'credit', date)
-    expect(subject.transactions[0]).to include date: date
+    expect(subject.print[0]).to include date: date
   end
 
 end
