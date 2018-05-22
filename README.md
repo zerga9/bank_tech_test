@@ -6,7 +6,7 @@ IRB screenshot
 
 Rspec and test-coverage screenshot
 
-![image](https://user-images.githubusercontent.com/33194929/40307198-6af6a3ce-5cf9-11e8-9c8b-60eee5e09a22.png)
+![image](https://user-images.githubusercontent.com/33194929/40362489-912d5c1a-5dc4-11e8-9646-5a52619c901b.png)
 
 
 Requirements
@@ -40,4 +40,4 @@ My approach for this test was TDD. I first wrote a test, tried to pass it and wh
 
 #### Technical Specifications
 
-I used Ruby for this challenge, Rspec and Rubocop for testing and Simplecov for the testcoverage
+I used Ruby for this challenge, Rspec for testing, Simplecov for the testcoverage and Rub0Cop as code analyzer

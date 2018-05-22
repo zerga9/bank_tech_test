@@ -18,7 +18,7 @@ describe Account do
     expect(subject.transactions[0]).to include date: '21/05/2018'
   end
 
-  it 'should let the customer see all their transactions' do
+  it 'should store all the transactions' do
     subject.transaction(500, 'credit', '15/04/2017')
     subject.transaction(300, 'debit', '16/04/2017')
     expect(subject.transactions).to include({ date: '16/04/2017', type: 'debit', value: 300, balance: 200 },
