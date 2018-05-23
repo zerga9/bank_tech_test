@@ -1,6 +1,3 @@
-require_relative 'statement'
-
-
 
 class Account
   attr_reader :balance

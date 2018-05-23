@@ -1,22 +1,17 @@
 class Statement
   attr_reader :transactions
 
-  def initialize(transactions)
-    @transactions = transactions
+  HEADER =  ['date','credit', 'debit', 'balance']
+  DELIMITER = ' || '
+
+  def initialize(transaction_log)
+    @transactions = transaction_log.transactions
   end
 
-  def print_header
-    puts 'date || credit  || debit || balance '
+  def printer
+    array = []
+    array << HEADER.join(DELIMITER)
+    array << @transactions.map { |tr| tr[:type] == 'credit' ? "#{tr[:date]} || || #{tr[:value]} ||  #{tr[:balance]} " : "#{tr[:date]} ||  #{tr[:value]} ||  ||  #{tr[:balance]} \n"}
   end
 
-  def print_statement
-    print_header
-    @transactions.reverse.each do |transaction|
-      if transaction[:type] == 'credit'
-        puts "#{transaction[:date]} || #{transaction[:value]} ||  ||  #{transaction[:balance]}"
-      else
-        puts "#{transaction[:date]} ||  || #{transaction[:value]} ||  #{transaction[:balance]}"
-      end
-    end
-  end
 end

@@ -6,7 +6,10 @@ describe TransactionLog do
   let(:transaction) { double :transaction}
   it 'stores the transactions' do
   allow(account).to receive(:balance).and_return(50)
+  allow(transaction).to receive(:date,).and_return('12/11/2001')
+  allow(transaction).to receive(:type,).and_return('credit')
+  allow(transaction).to receive(:value,).and_return(50)
   subject.log_transactions(transaction, account)
-  expect(subject.transactions).to include({:transaction => transaction, :balance => 50})
+  expect(subject.transactions).to include({:date => '12/11/2001', :type => 'credit', :value => 50, :balance => 50})
 end
 end

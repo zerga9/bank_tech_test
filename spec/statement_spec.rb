@@ -1,20 +1,10 @@
 require 'statement'
 
 describe Statement do
-
-  it 'should print out all transactions' do
-    transactions = [{ date: '16/04/2018', type: 'debit', value: 300, balance: 200 },
-                    { date: '15/04/2018', type: 'credit', value: 500, balance: 500 }]
-    statement = Statement.new(transactions)
-    expect(statement.print_statement).to include({ date: '16/04/2018', type: 'debit', value: 300, balance: 200 },
-                                            {date: '15/04/2018', type: 'credit', value: 500, balance: 500})
-
-
-  end
-  it 'should print out all the transactions, last one first' do
-    transactions = [{ date: '16/04/2018', type: 'debit', value: 300, balance: 200 },
-                    { date: '15/04/2018', type: 'credit', value: 500, balance: 500 }]
-    statement = Statement.new(transactions)
-    expect(statement.print_statement).to eq transactions.reverse
+  let(:transaction_log) {double :transaction_log}
+  it "stores the transactionlog" do
+    allow(transaction_log).to receive(:transactions).and_return(50)
+    subject = Statement.new(transaction_log)
+    expect(subject.transactions).to eq 50
   end
 end

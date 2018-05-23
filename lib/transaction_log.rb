@@ -6,6 +6,6 @@ class TransactionLog
   end
 
   def log_transactions(transaction, account)
-    transactions << {transaction: transaction, balance: account.balance }
+    transactions << {date: transaction.date, type: transaction.type, value: transaction.value, balance: account.balance }
   end
 end
