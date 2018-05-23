@@ -10,6 +10,6 @@ describe TransactionLog do
   allow(transaction).to receive(:type,).and_return('credit')
   allow(transaction).to receive(:value,).and_return(50)
   subject.log_transactions(transaction, account)
-  expect(subject.transactions).to include({:date => '12/11/2001', :type => 'credit', :value => 50, :balance => 50})
+  expect(subject.transactions).to include({:date => '12/11/2001', :type => 'credit', :value => 50.00, :balance => 50.00})
 end
 end

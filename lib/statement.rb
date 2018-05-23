@@ -11,7 +11,7 @@ class Statement
   def printer
     array = []
     array << HEADER.join(DELIMITER)
-    array << @transactions.map { |tr| tr[:type] == 'credit' ? "#{tr[:date]} || || #{tr[:value]} ||  #{tr[:balance]} " : "#{tr[:date]} ||  #{tr[:value]} ||  ||  #{tr[:balance]} \n"}
+    array << @transactions.reverse.map { |tr| tr[:type] == 'credit' ? "#{tr[:date]} || || #{'%.2f' % tr[:value]} ||  #{'%.2f' % tr[:balance]} " : "#{tr[:date]} ||  #{'%.2f' % tr[:value]} ||  ||  #{'%.2f' % tr[:balance]} \n"}
   end
 
 end

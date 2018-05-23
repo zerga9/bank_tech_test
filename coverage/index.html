@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-23T12:46:53+01:00">2018-05-23T12:46:53+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-23T14:10:13+01:00">2018-05-23T14:10:13+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -113,7 +113,7 @@
       <tr>
         <td class="strong"><a href="#5ebb4c866851e6cb0268e26a19a1968818f0aecb" class="src_link" title="spec/statement_spec.rb">spec/statement_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>11</td>
+        <td>10</td>
         <td>7</td>
         <td>7</td>
         <td>0</td>
@@ -378,7 +378,7 @@
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">    array &lt;&lt; @transactions.map { |tr| tr[:type] == &#39;credit&#39; ? &quot;#{tr[:date]} || || #{tr[:value]} ||  #{tr[:balance]} &quot; : &quot;#{tr[:date]} ||  #{tr[:value]} ||  ||  #{tr[:balance]} \n&quot;}</code>
+          <code class="ruby">    array &lt;&lt; @transactions.reverse.map { |tr| tr[:type] == &#39;credit&#39; ? &quot;#{tr[:date]} || || #{&#39;%.2f&#39; % tr[:value]} ||  #{&#39;%.2f&#39; % tr[:balance]} &quot; : &quot;#{tr[:date]} ||  #{&#39;%.2f&#39; % tr[:value]} ||  ||  #{&#39;%.2f&#39; % tr[:balance]} \n&quot;}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -761,46 +761,40 @@
         <li class="covered" data-hits="2" data-linenumber="4">
           <span class="hits">2</span>
           
-          <code class="ruby">let(:transaction_log) {double :transaction_log}</code>
+          <code class="ruby">  let(:transaction_log) {double :transaction_log}</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">it &quot;stores the transactionlog&quot; do</code>
+          <code class="ruby">  it &quot;stores the transactionlog&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  allow(transaction_log).to receive(:transactions).and_return(50)</code>
+          <code class="ruby">    allow(transaction_log).to receive(:transactions).and_return(50)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  subject = Statement.new(transaction_log)</code>
+          <code class="ruby">    subject = Statement.new(transaction_log)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  expect(subject.transactions).to eq 50</code>
+          <code class="ruby">    expect(subject.transactions).to eq 50</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">end</code>
@@ -900,7 +894,7 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">  expect(subject.transactions).to include({:date =&gt; &#39;12/11/2001&#39;, :type =&gt; &#39;credit&#39;, :value =&gt; 50, :balance =&gt; 50})</code>
+          <code class="ruby">  expect(subject.transactions).to include({:date =&gt; &#39;12/11/2001&#39;, :type =&gt; &#39;credit&#39;, :value =&gt; 50.00, :balance =&gt; 50.00})</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">

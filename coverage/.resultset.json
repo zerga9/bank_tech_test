@@ -55,7 +55,6 @@
         1,
         1,
         null,
-        null,
         null
       ],
       "/Users/gadishazerari/Projects/bank_tech_test/lib/statement.rb": [
@@ -142,6 +141,6 @@
         null
       ]
     },
-    "timestamp": 1527076013
+    "timestamp": 1527081013
   }
 }
