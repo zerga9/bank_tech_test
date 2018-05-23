@@ -30,9 +30,11 @@ date || credit || debit || balance
 #### How it works
 
 clone this reposition, run bundle install in your terminal and you can interact with the code via IRB.
-In IRB ```require './lib/account.rb'```
-type in ```account = Account.new``` and then you can make transactions with ```account.transaction(amount, type, date)```
-If you want to print the transactions just type ```account.print``` in your IRB and you'll get a table with all your transactions, last one first.
+In IRB ```require './lib/app.rb'```
+type in ```account = Account.new``` and then you can make transactions with ```account.deposit(amount)```, make a transaction with ```transaction = Transaction.new(value, type, date )```
+put it in the log like so ```log = TransactionLog.new``` and then ```log.log_transaction(transaction, account)```
+Make a statement ```statement = Statement(log)``` and display it ```display = Display.new``` and ```display.print(statement)```
+If you want to print the transactions just type ```account.print``` You'll see all the transactions, last one first.
 
 #### Approach
 

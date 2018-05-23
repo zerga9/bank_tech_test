@@ -6,7 +6,7 @@ require './lib/display.rb'
 
 account = Account.new
 account.deposit(100)
-transaction =  Transaction.new('100.00', 'credit', '25/11/2004')
+transaction =  Transaction.new(100, 'credit', '25/11/2004')
 log = TransactionLog.new
 log.log_transactions(transaction, account)
 account.withdrawal(50)
